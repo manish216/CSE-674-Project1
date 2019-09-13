@@ -120,21 +120,17 @@ The correlation values are stated below:
 
 Table 1: Pair-wise Correlation values and Independencies.
 
-### GIVEN
+GIVEN
 
-### X1 X2 X3 X4 X5 X
 
-### X1 0.119 0.
-
-### X2 0.159 0.2982 0.115 0.36 0.
-
-### X3 0.218 0.115 0.
-
-### X4 0.119 0.
-
-### X5 0.129 0.
-
-### X6 0.160 0.094 0.
+ |  val   |   X1   |   X2   |   X3   |   X4   |   X5   |  X6    | 
+ |  :---: |  :---: |  :---: |  :---: |  :---: | :---:  |  :---: |
+ |   X1   |    0   |    0   |    0   | 0.119  |   0    | 0.1666 |
+ |   x2   |  0.159 |    0   | 0.2982 | 0.115  |  0.36  | 0.1749 |
+ |   x3   |    0   |  0.218 |    0   |    0   | 0.115  | 0.0948 | 
+ |   x4   | 0.119  |    0   |   0    |    0   |   0    | 0.1432 | 
+ |   x5   |    0   | 0.129  | 0.1156 |    0   |    0   |    0   | 
+ |   x6   |  0.160 |    0   | 0.094  | 0.094  |    0   |    0   | 
 
 - By placing the threshold value as 0.15 we can find strong and weak correlation
     relationship between the nodes. Lower the value the higher the correlation.
