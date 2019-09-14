@@ -27,8 +27,8 @@ For bi-gram “th”:
 - We need to find the pair-wise correlations and in-dependencies that exists between
     six features. We can find independencies between xi and xj by using the following
     formula
-    
-    <img src="http://www.sciweavers.org/tex2img.php?eq=abs%28%28P%28x%2Cy%29-p%28x%29%28y%29%29%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="abs((P(x,y)-p(x)(y)))" width="197" height="19" />
+   
+![](https://latex.codecogs.com/gif.latex?%5Csum%28%28abs%20P%28x%2Cy%29%20-%20P%28x%29P%28y%29%20%29%29)
     
 Here x is xi and y is xj
 P(x, y) is Joint Probability.
@@ -60,12 +60,11 @@ to determine high probability model.
     whole networks performance.
 - The probability distribution is defined in the form of factors:
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=P%28%20X_%7B1%7D%2BX_%7B2%7D%2BX_%7B3%7D%2B...%2BX_%7BN%7D%20%29%20%3D%20%20%5Cprod_%7Bi%3D1%7D%5E%7BN%7D%20P%28X_%7Bi%7D%20%7C%20%5Cprod%20X_%7Bi%7D%29%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="P( X_{1}+X_{2}+X_{3}+...+X_{N} ) =  \prod_{i=1}^{N} P(X_{i} | \prod X_{i}) " width="347" height="53" />
+    ![Probability distribution](https://latex.codecogs.com/gif.latex?P%28X_%7B1%7D&plus;X_%7B2%7D&plus;X_%7B3%7D&plus;...&plus;X_%7BN%7D%29%20%3D%20%5Cprod_%7Bi%3D1%7D%5E%7BN%7D%20P%28X_%7Bi%7D%20%7C%20%5Cprod%20X_%7Bi%7D%29)
 
-Where <img src="http://bit.ly/2UQ1PSl" align="center" border="0" alt="\prod_{i=1}^{N} P(X_{i} | \prod X_{i}) " width="119" height="53" />
-is P (node | parent(node))
+Where ![](https://latex.codecogs.com/gif.latex?%5Cprod_%7Bi%3D1%7D%5E%7BN%7D%20P%28X_i%20%7C%20%5Cprod%20X_i%29) is P (node | parent(node))
 
-**2 .1 Markov network**
+**2.1 Markov network**
 
 - Markov network is undirected acyclic graphs which are similar to the Bayesian
     network. As the graphs are undirected, instead of edges they have cliques which
@@ -78,22 +77,11 @@ is P (node | parent(node))
     potentials
 - The conditional probability is defined as
 
-```
-푃(푦 |휃)=
-```
-### 1
+![](https://latex.codecogs.com/gif.latex?P%28y%7C%20%5Ctheta%29%20%3D%20%5Cfrac%7B1%7D%7BZ%28%5Ctheta%29%7D%20%5Cprod_c%20%5Cphi%28y_c%20%7C%20%5Ctheta_c%29)
 
-### 푍(휃)
-
-### ∏휙(푦푐 | 휃푐)
-
-```
-푐
-```
-```
-Where 푍(휃) is the partition function derives as summation of products of all
+Where ![](https://latex.codecogs.com/gif.latex?Z%28%5Ctheta%29) is the partition function derives as summation of products of all
 potential factors.
-```
+
 **2.2 Moralization**
 
 - Moralization is the method to get the moral graphs, which finds the equivalent
@@ -109,12 +97,11 @@ potential factors.
 We are calculating the pair-wise correlations and independencies for all possible combinations
 of xi and xj.
 
-```
-Correlation = Σ((푎푏푠 푃 (푥푖,푥푗) −푃 (푥푖) 푃( 푥푗))
-```
-Where 푃 (푥푖,푥푗) is the joint probability distribution.
+correlation = ![](https://latex.codecogs.com/gif.latex?%5Csum%28%28abs%20P%28x_i%2Cx_j%29%20-%20P%28x_i%29P%28x_j%29%20%29%29)
 
-푃 (푥푖)푃( 푥푗) is the product of marginal distributions.
+Where ![](https://latex.codecogs.com/gif.latex?p%28x_i%2Cx_j%29) is the joint probability distribution.
+
+![](https://latex.codecogs.com/gif.latex?P%28x_i%29P%28x_j%29) is the product of marginal distributions.
 
 The correlation values are stated below:
 
@@ -142,6 +129,7 @@ GIVEN
     and we can also observe that node x2 is appearing as a weak correlation node for most
     of the other nodes and can conclude that x 2 node as good correlation with x 1 node
     when compared to other nodes.
+    
 **3. 2 Task2: Constructing the Bayesian networks and finding the goodness score**
 - In this task, we are constructing the five Bayesian networks using the threshold value
 calculated from the above task1.
@@ -165,37 +153,6 @@ sampling.
 - If S is the ith interval then sampled value is xi
 - After generating the sample data for the five models we are combining the five data
     sets and calculating the goodness score for by using the k2 function.
-
-```
-Table2: K2 Scores for Bayesian Models
-```
-- By comparing the goodness score of the five Bayesian models we can observe that
-    model 4 is the High probability model where the parent node is x1 dependent on x
-    and x6, the child node x4 is dependent on its descendant x2, which is dependent on
-    x5 and the node x5 is connected with x3.
-- Edges of high probability model: ('x4','x1'),('x1','x2'),('x1','x6'),('x2','x3'),('x3','x5')
-- Edges of low probability model : ('x1','x4'),('x1','x6'),('x4','x2'),('x2','x5'),('x5','x3')
-
-Figure1: Low Probability ‘th’ model Figure2: High Probability ‘th’ model
-
-```
-K2 Score Values
-```
-```
-Model 1 - 31949.
-```
-```
-Model 2 - 32018.
-```
-```
-Model 3 - 32090.66 [LOW PROBABILITY MODEL]
-```
-```
-Model 4 - 31947.80 [HIGH PROBABILITY MODEL]
-```
-```
-Model 5 - 32038.
-```
 
 ## 3 Task 3: Converting Bayesian network to Markov network
 
@@ -230,20 +187,18 @@ Model 5 - 32038.
 - The model returned the following probabilities
     The query is: {'x1': 0, 'x3': 1, 'x4': 0, 'x5': 0}
 - For the given evidence parameters
-    풙ퟐퟐ : shape of loop of h is curved left side and straight right side
-    풙ퟔퟎ : shape of t is tented.
+    x22 : shape of loop of h is curved left side and straight right side
+    x60 : shape of t is tented.
 - The model returned the best settings as :
-    풙ퟏퟎ : Height relationship of t to h where t is shorter than h
-    풙 31 : Shape of Arch of h is pointed
-    풙 40 : Height of cross is on upper half of staff
-    풙ퟓퟎ: Base line of h is slanting upwards
+    x10 : Height relationship of t to h where t is shorter than h
+    x31 : Shape of Arch of h is pointed
+    x40 : Height of cross is on upper half of staff
+     x50: Base line of h is slanting upwards
 
 Figure3: Markov model of best probability ‘th’ mode
 
 
-## 4 Task 4: Constructing Bayesian networks for MNIST
-
-## dataset
+## 4 Task 4: Constructing Bayesian networks for MNIST dataset
 
 **4.1 Constructing the Bayesian network**
 
