@@ -4,6 +4,9 @@ Determining the Probabilities of Hand Writing Formations Using PGM’S
 Manish Reddy Challamala,
 March 8, 2019 ,manishre@buffalo.edu
 
+For detailed explaination, please visit the below link:
+[link for report pdf](https://github.com/manish216/CSE-674-Project1/blob/master/proj1.pdf)
+
 ## Abstract
 
 To develop a Probability Graphical Model (PGM’s) to determine the best
@@ -194,9 +197,6 @@ sampling.
     x31 : Shape of Arch of h is pointed
     x40 : Height of cross is on upper half of staff
      x50: Base line of h is slanting upwards
-
-Figure3: Markov model of best probability ‘th’ mode
-
 
 ## 4 Task 4: Constructing Bayesian networks for MNIST dataset
 
